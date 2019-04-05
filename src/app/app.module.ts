@@ -6,14 +6,28 @@ import { MatInputModule } from "@angular/material/input";
 import { MatIconModule } from "@angular/material/icon";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FormsModule } from "@angular/forms";
-
+import { MatGridListModule } from "@angular/material/grid-list";
 import { AppComponent } from "./app.component";
-import { IssuesComponent } from './modules/issues/issues.component';
-import { IssueComponent } from './modules/issue/issue.component';
-import { KeywordFilterPipe } from './pipes/keyword-filter.pipe';
+import { IssuesComponent } from "./modules/issues/issues.component";
+import { IssueComponent } from "./modules/issue/issue.component";
+import { KeywordFilterPipe } from "./pipes/keyword-filter.pipe";
+import { MatExpansionModule } from "@angular/material/expansion";
+import { MatChipsModule } from "@angular/material/chips";
+import { MarkdownModule } from "ngx-markdown";
+import { MatBadgeModule } from "@angular/material/badge";
+import { MatCardModule } from "@angular/material/card";
+import { MatButtonModule } from "@angular/material/button";
+import { MatDialogModule } from "@angular/material/dialog";
+import { ModalComponent } from "./modules/modal/modal.component";
 
 @NgModule({
-  declarations: [AppComponent, IssuesComponent, IssueComponent, KeywordFilterPipe],
+  declarations: [
+    AppComponent,
+    IssuesComponent,
+    IssueComponent,
+    KeywordFilterPipe,
+    ModalComponent
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -21,9 +35,18 @@ import { KeywordFilterPipe } from './pipes/keyword-filter.pipe';
     MatInputModule,
     MatIconModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    MatGridListModule,
+    MatExpansionModule,
+    MatChipsModule,
+    MarkdownModule.forRoot(),
+    MatBadgeModule,
+    MatCardModule,
+    MatButtonModule,
+    MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [AppComponent, IssueComponent, ModalComponent]
 })
 export class AppModule {}

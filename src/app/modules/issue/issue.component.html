@@ -1,1 +1,46 @@
-<p>{{ issue.title }}</p>
+<div class="card-wrapper">
+  <mat-card>
+    <mat-card-title>
+      {{ issue.title }}
+    </mat-card-title>
+    <mat-card-subtitle>
+      <span class="float-right">
+        <div class="users" *ngIf="issue.user">
+          Opened by
+          <a href="{{ issue.user.html_url }}" target="_blank">
+            {{ issue.user.login }}
+          </a>
+        </div>
+        <div class="users" *ngIf="issue.assignee">
+          Assigned to
+          <a href="{{ issue.assignee.html_url }}" target="_blank">
+            {{ issue.assignee.login }}
+          </a>
+        </div>
+      </span>
+      <mat-chip-list>
+        <mat-chip *ngIf="issue.state === 'open'" color="accent" selected
+          >Issue Open</mat-chip
+        >
+
+        <mat-chip *ngIf="issue.state === 'closed'" color="primary" selected
+          >Issue Closed</mat-chip
+        >
+        <mat-chip *ngIf="issue.comments > 0" color="primary" selected
+          >{{ issue.comments }} Comments</mat-chip
+        >
+      </mat-chip-list>
+    </mat-card-subtitle>
+    <mat-card-content> </mat-card-content>
+    <mat-card-actions class="view-body-button-container">
+      <button
+        (click)="displayBody()"
+        class="view-body-button"
+        mat-stroked-button
+        color="primary"
+      >
+        View Full Issue
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

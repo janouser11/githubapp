@@ -4,7 +4,7 @@ import { Issue } from "src/app/models/issue";
 @Component({
   selector: "app-issues",
   templateUrl: "./issues.component.html",
-  styleUrls: ["./issues.component.sass"]
+  styleUrls: ["./issues.component.scss"]
 })
 export class IssuesComponent implements OnInit {
   @Input() issues: Issue[];

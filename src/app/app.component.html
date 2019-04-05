@@ -1,9 +1,14 @@
-<mat-form-field>
-  <input
-    matInput
-    [(ngModel)]="searchText"
-    placeholder="Search for issues"
-    (input)="inputChange()"
-  />
-</mat-form-field>
-<app-issues [issues]="issues | keywordFilter: searchText"></app-issues>
+<div class="main-container">
+  <h1 class="title">Recent Angular Issues</h1>
+  <div class="search-container">
+    <mat-form-field class="input-field">
+      <input
+        matInput
+        [(ngModel)]="searchText"
+        placeholder="Search for issues"
+        (input)="inputChange()"
+      />
+    </mat-form-field>
+  </div>
+  <app-issues [issues]="issues | keywordFilter: searchText"></app-issues>
+</div>

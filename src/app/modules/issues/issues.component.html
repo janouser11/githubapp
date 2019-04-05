@@ -1,5 +1,5 @@
 <div *ngIf="issues.length > 0">
-  <h2>There are {{ issues?.length }} issues</h2>
+  <h2 class="issue-count">There are currently {{ issues?.length }} issues</h2>
   <div *ngFor="let issue of issues">
     <app-issue [issue]="issue"></app-issue>
   </div>
