@@ -2,6 +2,10 @@
 
 This project is hosted in Heroku at [https://githubissuesapp.herokuapp.com/](https://githubissuesapp.herokuapp.com/). If it does not load right away, be patient while Heroku fires up.
 
+### Installing Dependencies
+
+Don't forget to `npm install` all dependencies before running locally!
+
 ## Development server
 
 Run `npm run-script serve` or `ng serve` for the dev server. Navigate to [http://localhost:4200/](http://localhost:4200/). The app will automatically reload if you change any of the source files.
