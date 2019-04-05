@@ -1,5 +1,7 @@
 <div *ngIf="issues.length > 0">
-  <h2 class="issue-count">There are currently {{ issues?.length }} issues</h2>
+  <h2 class="issue-count">
+    {{ issues?.length }} issues have been logged in the past 7 days
+  </h2>
   <div *ngFor="let issue of issues">
     <app-issue [issue]="issue"></app-issue>
   </div>

@@ -24,9 +24,5 @@ export class IssueComponent implements OnInit {
       height: "800px",
       data: { body: this.issue.body }
     });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log("The dialog was closed");
-    });
   }
 }

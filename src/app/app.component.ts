@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { GithubapiService } from "./http/githubapi.service";
 import { Issue } from "./models/issue";
-
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
@@ -12,6 +12,8 @@ export class AppComponent {
   issues: Issue[] = [];
   error = null;
   searchText: string = "";
+  faSearch = faSearch;
+
   constructor(private githubapi: GithubapiService) {}
 
   ngOnInit() {
@@ -20,7 +22,6 @@ export class AppComponent {
   }
 
   inputChange() {
-    console.log(this.searchText);
     this.issues.filter(x => x.body.includes(this.searchText));
   }
   showAngularIssue() {

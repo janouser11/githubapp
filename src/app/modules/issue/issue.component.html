@@ -2,8 +2,7 @@
   <mat-card>
     <mat-card-title>
       {{ issue.title }}
-    </mat-card-title>
-    <mat-card-subtitle>
+      <span *ngIf="issue.state === 'open'" class="issue-open"> Issue open</span>
       <span class="float-right">
         <div class="users" *ngIf="issue.user">
           Opened by
@@ -18,29 +17,31 @@
           </a>
         </div>
       </span>
+    </mat-card-title>
+    <mat-card-subtitle>
       <mat-chip-list>
-        <mat-chip *ngIf="issue.state === 'open'" color="accent" selected
-          >Issue Open</mat-chip
-        >
-
         <mat-chip *ngIf="issue.state === 'closed'" color="primary" selected
           >Issue Closed</mat-chip
         >
-        <mat-chip *ngIf="issue.comments > 0" color="primary" selected
-          >{{ issue.comments }} Comments</mat-chip
-        >
       </mat-chip-list>
     </mat-card-subtitle>
-    <mat-card-content> </mat-card-content>
+    <mat-card-content>
+      {{ issue.body | slice: 0:250
+      }}<span *ngIf="issue.body.length === 0">No details</span>...
+    </mat-card-content>
     <mat-card-actions class="view-body-button-container">
-      <button
-        (click)="displayBody()"
-        class="view-body-button"
-        mat-stroked-button
-        color="primary"
+      <mat-chip class="chip" (click)="displayBody()" color="primary" selected
+        >See issue details</mat-chip
+      ><a class="comment-url" href="{{ issue.html_url }}" target="_blank">
+        <mat-chip class="comment chip" *ngIf="issue.comments > 0"
+          >{{ issue.comments }} Comments</mat-chip
+        ></a
       >
-        View Full Issue
-      </button>
+      <a class="comment-url" href="{{ issue.html_url }}" target="_blank">
+        <mat-chip class="comment chip" *ngIf="issue.comments === 0"
+          >Leave Comment</mat-chip
+        ></a
+      >
     </mat-card-actions>
   </mat-card>
 </div>

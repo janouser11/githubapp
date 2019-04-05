@@ -1,7 +1,7 @@
 .card-wrapper {
-  padding: 15px;
-  width: 700px;
-  margin: 0 auto;
+  padding: 15px 0;
+  width: 100%;
+  //   margin: 0 auto;
 }
 
 .float-right {
@@ -9,9 +9,30 @@
 }
 
 .view-body-button-container {
-  text-align: center;
+  //   text-align: center;
 }
 
 .users {
   padding: 5px 0;
+  font-size: 17px;
+}
+
+.issue-open {
+  color: #ff4081;
+  margin-left: 8px;
+  font-size: 19px;
+  font-family: sans-serif;
+}
+
+.comment {
+  float: right;
+}
+
+.comment-url {
+  text-decoration: none;
+  color: black;
+}
+
+.chip {
+  margin: 10px;
 }

@@ -19,7 +19,7 @@ import { MatCardModule } from "@angular/material/card";
 import { MatButtonModule } from "@angular/material/button";
 import { MatDialogModule } from "@angular/material/dialog";
 import { ModalComponent } from "./modules/modal/modal.component";
-
+import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +43,8 @@ import { ModalComponent } from "./modules/modal/modal.component";
     MatBadgeModule,
     MatCardModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent],
